@@ -2,11 +2,13 @@
 
 Approved setup decisions:
 
+- GitHub username/account: `ThisIsLocalMarketing`
 - Repo: `tilm-signal-pages`
+- Remote: `git@github.com:ThisIsLocalMarketing/tilm-signal-pages.git`
 - Visibility: public
 - Local folder: `C:/Users/Allan/TILM/tilm-signal-pages/`
 - Commit name: `Allan`
-- Commit email: GitHub private noreply email if available
+- Commit email: `299531512+ThisIsLocalMarketing@users.noreply.github.com`
 - Auth: SSH key for long-term correctness
 
 ## Current setup state

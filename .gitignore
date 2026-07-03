@@ -1,0 +1,27 @@
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Secrets and local env
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Private/local data that must not go public
+private/
+prospects/
+leads/
+customer-data/
+stripe/
+quotes/
+
+# Build/cache folders for future tooling
+node_modules/
+dist/
+build/
+.cache/

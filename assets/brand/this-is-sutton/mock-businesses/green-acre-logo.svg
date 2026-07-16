@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Green Acre mock logo</title>
+  <desc id="desc">A fictional lawn and garden logo with a leaf, field rows, and rising sun.</desc>
+  <circle cx="150" cy="150" r="139" fill="#224e35" stroke="#a8c96f" stroke-width="9"/>
+  <circle cx="150" cy="150" r="116" fill="#f1e7cc" stroke="#76583d" stroke-width="5"/>
+  <circle cx="150" cy="105" r="35" fill="#d6a84c"/>
+  <path d="M49 176 Q102 124 150 168 Q198 124 251 176 V229 H49 Z" fill="#7ba85a"/>
+  <path d="M59 229 Q105 168 150 176 Q195 168 241 229" fill="#567d45"/>
+  <path d="M106 225 Q126 190 150 176 Q175 191 195 225 M82 225 Q112 181 146 169 M218 225 Q188 181 154 169" fill="none" stroke="#f1e7cc" stroke-width="6" stroke-linecap="round"/>
+  <path d="M147 165 C112 139 111 94 151 70 C186 99 184 140 147 165 Z" fill="#224e35"/>
+  <path d="M147 158 Q148 116 155 83" fill="none" stroke="#a8c96f" stroke-width="6" stroke-linecap="round"/>
+  <rect x="69" y="238" width="162" height="40" rx="20" fill="#224e35"/>
+  <text x="150" y="265" text-anchor="middle" fill="#f1e7cc" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" letter-spacing="2">GREEN ACRE</text>
+</svg>

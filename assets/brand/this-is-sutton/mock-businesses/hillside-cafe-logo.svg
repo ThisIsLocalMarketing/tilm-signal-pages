@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Hillside Cafe mock logo</title>
+  <desc id="desc">A fictional coffeehouse logo with a steaming cup and hillside sunrise.</desc>
+  <defs>
+    <linearGradient id="oat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff4de"/>
+      <stop offset="1" stop-color="#e8cfaa"/>
+    </linearGradient>
+  </defs>
+  <circle cx="150" cy="150" r="139" fill="#4a2f25" stroke="#c78957" stroke-width="9"/>
+  <circle cx="150" cy="150" r="116" fill="url(#oat)" stroke="#6d7f60" stroke-width="5"/>
+  <path d="M62 128 Q111 80 153 126 Q194 74 240 129 V160 H62 Z" fill="#6d7f60"/>
+  <circle cx="202" cy="91" r="19" fill="#c78957"/>
+  <path d="M101 156 H190 V195 Q190 225 160 225 H131 Q101 225 101 195 Z" fill="#4a2f25"/>
+  <path d="M190 166 H211 Q231 166 231 185 Q231 204 211 204 H190" fill="none" stroke="#4a2f25" stroke-width="11" stroke-linecap="round"/>
+  <path d="M123 149 C104 128 137 120 119 97 M151 149 C133 127 165 119 149 96 M176 149 C158 128 190 120 174 98" fill="none" stroke="#fff4de" stroke-width="7" stroke-linecap="round"/>
+  <text x="150" y="259" text-anchor="middle" fill="#fff4de" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="700" letter-spacing="2">HILLSIDE CAFE</text>
+</svg>

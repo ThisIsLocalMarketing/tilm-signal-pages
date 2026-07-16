@@ -1,21 +1,222 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TILM Signal Pages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TILM — This Is Local Marketing</title>
+  <meta name="description" content="TILM creates Signal Pages, scan-ready QR displays, social content support, trust-readiness services, and the This Is Sutton founding card for local businesses." />
+  <link rel="canonical" href="https://thisislocalmarketing.github.io/tilm-signal-pages/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TILM — This Is Local Marketing" />
+  <meta property="og:description" content="TILM creates Signal Pages, scan-ready QR displays, social content support, trust-readiness services, and the This Is Sutton founding card for local businesses." />
+  <meta property="og:url" content="https://thisislocalmarketing.github.io/tilm-signal-pages/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;650;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#050705;color:#f7fffa;font-family:Inter,system-ui,sans-serif;padding:24px}
-    main{max-width:720px;border:1px solid #c7d0cc55;border-radius:24px;padding:32px;background:linear-gradient(135deg,#1e1b4b,#301934)}
-    a{color:#aafac3} h1{margin-top:0}
+    :root{
+      --bg:#060307;
+      --bg2:#140817;
+      --surface:#100B14;
+      --surface2:#17101D;
+      --text:#F7FFFA;
+      --muted:#CFC8D2;
+      --line:rgba(220,204,224,.18);
+      --mint:#AAFAC3;
+      --teal:#0C2A24;
+      --cyan:#79FFE1;
+      --orchid:#301934;
+      --violet:#8A5BA3;
+      --warm:#F3C969;
+      --shadow:rgba(0,0,0,.52);
+      --grid:rgba(170,250,195,.032);
+      color-scheme:dark;
+    }
+    body.light{
+      --bg:#F7FFFA;
+      --bg2:#EDF7F2;
+      --surface:#FFFFFF;
+      --surface2:#EEF5F2;
+      --text:#10211D;
+      --muted:#49615A;
+      --line:rgba(16,33,29,.14);
+      --mint:#0F6D5E;
+      --teal:#E3F4ED;
+      --cyan:#0E9D88;
+      --orchid:#F2E7F5;
+      --violet:#6D3D82;
+      --warm:#B7791F;
+      --shadow:rgba(16,33,29,.13);
+      --grid:rgba(15,109,94,.08);
+      color-scheme:light;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;color:var(--text);
+      background:
+        radial-gradient(circle at 18% 0,color-mix(in srgb,var(--mint) 14%,transparent),transparent 25%),
+        radial-gradient(circle at 82% 8%,color-mix(in srgb,var(--violet) 28%,transparent),transparent 30%),
+        radial-gradient(circle at 72% 46%,color-mix(in srgb,var(--orchid) 62%,transparent),transparent 34%),
+        linear-gradient(135deg,var(--bg),var(--bg2) 54%,#030304);
+      font-family:Manrope,Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.5;-webkit-font-smoothing:antialiased;
+      transition:background .25s ease,color .25s ease;
+    }
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
+    a{color:inherit}.wrap{position:relative;width:min(1120px,92vw);margin:28px auto 72px}
+    .nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px;margin-bottom:26px}
+    .brand{display:flex;align-items:center;justify-self:start;position:relative;z-index:2}.logo{width:68px;height:68px;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 24% 18%,color-mix(in srgb,var(--mint) 14%,transparent),transparent 34%),linear-gradient(145deg,#17051C,#301934 68%,#0B030D);border:1px solid color-mix(in srgb,var(--mint) 30%,transparent);box-shadow:0 0 42px color-mix(in srgb,var(--mint) 18%,transparent);padding:5px;display:grid;place-items:center}
+    .logo img{display:block;width:100%;height:100%;object-fit:contain}.brand-title{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(52vw,560px);max-width:calc(100% - 220px);z-index:1}.brand-title img{display:block;width:100%;height:auto;object-fit:contain}body.light .brand-title img{filter:brightness(.34) saturate(1.35)}.nav-actions{position:relative;z-index:2}
+    .toggle{border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);color:var(--mint);border-radius:999px;width:44px;height:40px;display:inline-grid;place-items:center;font-weight:900;cursor:pointer}.mode-icon{font-size:21px;line-height:1;color:var(--mint);text-shadow:0 0 14px color-mix(in srgb,var(--mint) 24%,transparent)}
+    .hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.06fr .84fr;gap:24px;align-items:center;padding:24px 28px;border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,color-mix(in srgb,var(--orchid) 58%,transparent),color-mix(in srgb,var(--surface) 88%,transparent) 54%,color-mix(in srgb,var(--teal) 32%,transparent));box-shadow:0 30px 100px var(--shadow)}
+    .hero:after{content:"";position:absolute;right:-132px;top:-132px;width:380px;height:380px;border-radius:50%;border:1px solid color-mix(in srgb,var(--mint) 25%,transparent);box-shadow:inset 0 0 90px color-mix(in srgb,var(--mint) 8%,transparent)}.hero>*{position:relative}
+    h1{font-family:Sora;font-size:clamp(42px,6.4vw,76px);line-height:.96;letter-spacing:-.065em;margin:18px 0 16px}h1 em{font-style:normal;color:var(--mint)}.lead{font-size:20px;color:var(--muted);max-width:700px;margin:0}
+    .system-card{border:1px solid var(--line);border-radius:28px;padding:24px;background:linear-gradient(160deg,color-mix(in srgb,var(--surface2) 80%,transparent),color-mix(in srgb,var(--surface) 72%,transparent));display:flex;flex-direction:column;justify-content:space-between}
+    .system-card.compact{min-height:auto;justify-content:center}.hero-stamp{position:relative;overflow:hidden;text-align:left;display:grid;grid-template-rows:auto auto;gap:17px}.hero-stamp:before{content:"";position:absolute;inset:8px;border:1px solid color-mix(in srgb,var(--mint) 18%,transparent);border-radius:24px;pointer-events:none}.promise-block{padding:0 8px}.path-block{padding-top:4px}.promise-lead{font-size:16px;color:var(--text);margin:0 auto;line-height:1.42;text-align:center;max-width:390px}.path-list{display:grid;gap:10px;max-width:410px;margin-inline:auto}.path-list div{display:grid;grid-template-columns:66px 1fr;gap:10px;align-items:center;border:1px solid color-mix(in srgb,var(--mint) 22%,transparent);border-radius:14px;padding:8px 12px;background:linear-gradient(135deg,color-mix(in srgb,var(--mint) 7%,transparent),color-mix(in srgb,var(--violet) 12%,transparent))}.path-list b{font-family:Sora;color:var(--mint);letter-spacing:-.02em}.path-list span{color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;font:800 12px Sora;letter-spacing:.11em;text-transform:uppercase;color:#06110A;border:1px solid color-mix(in srgb,var(--mint) 42%,transparent);padding:7px 12px;background:var(--mint);width:max-content;margin-inline:auto;box-shadow:0 0 20px color-mix(in srgb,var(--mint) 12%,transparent)}
+    .section{margin-top:22px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 88%,transparent),color-mix(in srgb,var(--surface2) 68%,transparent));padding:28px 28px 30px;box-shadow:0 18px 60px color-mix(in srgb,var(--shadow) 34%,transparent)}
+    .section-head{display:flex;align-items:center;justify-content:center;text-align:center;gap:20px;margin-bottom:28px}.section-head .badge{margin-bottom:22px}.section h2{font-family:Sora;font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-.05em;margin:0;color:var(--text);text-shadow:0 0 22px color-mix(in srgb,var(--mint) 10%,transparent)}.section p{color:var(--muted);margin:8px 0 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:20px;background:color-mix(in srgb,var(--text) 5%,transparent);padding:18px;min-height:132px}.card.feature{border-color:var(--line);background:color-mix(in srgb,var(--text) 5%,transparent)}.card b{display:block;font-family:Sora;color:var(--mint);letter-spacing:-.02em;margin-bottom:8px}.service-card{display:flex;flex-direction:column;justify-content:space-between;gap:14px;text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}.service-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--mint) 46%,transparent);background:color-mix(in srgb,var(--mint) 7%,transparent)}.service-card span{display:block}.service-cta{margin-top:auto;color:var(--mint);font:850 13px Sora;letter-spacing:.02em}.card span,.card p{color:var(--muted);font-size:14px}.card strong{color:var(--mint)}.contact-link{color:var(--muted);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--mint) 38%,transparent)}.contact-link:hover{color:var(--mint)}.social-links{display:flex;flex-wrap:wrap;gap:10px}.social-links a{display:inline-flex;color:var(--muted);text-decoration:none;border:1px solid color-mix(in srgb,var(--mint) 26%,transparent);border-radius:999px;padding:6px 10px;background:color-mix(in srgb,var(--mint) 5%,transparent);font-size:14px}.social-links a:hover{color:var(--mint);border-color:color-mix(in srgb,var(--mint) 50%,transparent)}
+
+    .pilot-intro{max-width:900px;margin:0 auto 20px;text-align:center}.pilot-intro p{font-size:17px}.pilot-intro strong{color:var(--mint)}
+    .pilot-signal{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:22px;margin-top:16px;border:1px solid color-mix(in srgb,var(--mint) 32%,transparent);border-radius:22px;padding:20px 22px;background:linear-gradient(135deg,color-mix(in srgb,var(--mint) 10%,transparent),color-mix(in srgb,var(--orchid) 24%,transparent));box-shadow:0 0 34px color-mix(in srgb,var(--mint) 7%,transparent)}.pilot-signal-copy{max-width:770px}.pilot-signal .signal-eyebrow{display:block;color:var(--mint);font:800 11px Sora;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}.pilot-signal h3{font-family:Sora;font-size:clamp(23px,2.7vw,31px);line-height:1.05;letter-spacing:-.045em;margin:0;color:var(--text)}.pilot-signal p{font-size:15px;line-height:1.65;margin:8px 0 0}.pilot-signal a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none;border:1px solid color-mix(in srgb,var(--mint) 42%,transparent);border-radius:999px;padding:11px 15px;background:var(--mint);color:#06110A;font:850 13px Sora;letter-spacing:.02em;box-shadow:0 10px 28px color-mix(in srgb,var(--mint) 14%,transparent)}.pilot-signal a:hover{transform:translateY(-1px)}
+    .cta-strip{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:16px;border:1px solid color-mix(in srgb,var(--mint) 24%,transparent);border-radius:20px;padding:16px 18px;background:linear-gradient(135deg,color-mix(in srgb,var(--mint) 8%,transparent),color-mix(in srgb,var(--orchid) 26%,transparent))}.cta-strip b{display:block;font-family:Sora;color:var(--mint);margin-bottom:4px}.cta-strip span{color:var(--muted);font-size:14px}.cta-strip a{flex:0 0 auto;text-decoration:none;border:1px solid color-mix(in srgb,var(--mint) 38%,transparent);border-radius:999px;padding:10px 13px;background:var(--mint);color:#06110A;font:850 13px Sora;letter-spacing:.02em}
+    .contact-panel{display:grid;grid-template-columns:1fr .92fr .86fr;gap:12px;align-items:stretch;border:1px solid color-mix(in srgb,var(--mint) 26%,transparent);border-radius:22px;padding:14px;background:linear-gradient(135deg,color-mix(in srgb,var(--mint) 8%,transparent),color-mix(in srgb,var(--orchid) 28%,transparent));box-shadow:0 0 34px color-mix(in srgb,var(--mint) 7%,transparent)}.contact-primary,.contact-block{border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--text) 5%,transparent);padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:118px}.contact-primary h3,.contact-block h3{font-family:Sora;font-size:clamp(22px,2.35vw,28px);line-height:1.02;letter-spacing:-.045em;margin:7px 0 0;color:var(--text)}.contact-primary p,.contact-block p{color:var(--muted);font-size:14px;margin:0}.contact-eyebrow{display:inline-flex;color:var(--mint);font:800 11px Sora;letter-spacing:.12em;text-transform:uppercase}.contact-actions,.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}.contact-button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;padding:10px 14px;font:850 13px Sora;letter-spacing:.02em}.contact-button.primary{background:var(--mint);border:1px solid color-mix(in srgb,var(--mint) 44%,transparent);color:#06110A}.contact-button.secondary{color:var(--muted);border:1px solid color-mix(in srgb,var(--mint) 28%,transparent);background:color-mix(in srgb,var(--mint) 5%,transparent)}.contact-button.secondary:hover{color:var(--mint);border-color:color-mix(in srgb,var(--mint) 52%,transparent)}.contact-block b{display:block;font-family:Sora;color:var(--mint);letter-spacing:-.02em;margin-bottom:0}.contact-block .contact-link{display:inline-flex;width:max-content;max-width:100%;margin:0}.contact-block .social-links{justify-content:center;margin-top:14px}
+    .compact-claims{padding:20px 28px}.compact-claims p{font-size:13px;text-align:center;max-width:980px;margin:0 auto;color:var(--muted)}.compact-claims strong{color:var(--mint)}#contact{padding-bottom:26px}.form-access-note{display:block;max-width:66ch!important;margin:10px auto 0!important;color:var(--muted)!important;font-size:11px!important;line-height:1.5!important}.form-access-note a{color:var(--mint);font-weight:850}
+    @media(max-width:900px){.hero,.grid-2,.contact-panel,.pilot-signal{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.cta-strip{display:grid}.pilot-signal a{width:max-content}.section-head{display:block}.nav{align-items:flex-start}.nav>div:last-child{text-align:right}}
+    @media(max-width:560px){.wrap{width:min(94vw,1120px);margin-top:16px}.hero,.section{border-radius:24px;padding:21px}.nav{min-height:64px;gap:10px}.toggle{margin-top:0}.logo{width:58px;height:58px}.brand-title{width:min(64vw,270px);max-width:none}h1{font-size:39px}.lead{font-size:17px}}
   </style>
+  <link rel="preload" as="image" href="assets/brand/backgrounds/tilm-bg-main-signal-gateway-dark-2026-07-15.webp" type="image/webp" media="(min-width: 701px)">
+<link rel="preload" as="image" href="assets/brand/backgrounds/tilm-bg-main-signal-gateway-dark-mobile-2026-07-15.webp" type="image/webp" media="(max-width: 700px)">
+  <link rel="stylesheet" href="assets/brand/backgrounds/tilm-premium-system-v1.css">
 </head>
-<body>
-  <main>
-    <p>TILM / This Is Local Marketing</p>
-    <h1>Signal Pages</h1>
-    <p>Public-safe Signal Pages and launch pages for local business visibility, action paths, and trust paths.</p>
-    <p><a href="./sutton/">Open the This Is Sutton launch hub</a></p>
+<body class="tilm-page tilm-page-main">
+  <main class="wrap">
+    <nav class="nav" aria-label="Page controls">
+      <div class="brand"><div class="logo" aria-label="Mint TILM logo"><img src="assets/brand/tilm-logo-mint-square-web-2026-07-05.png" alt="Mint TILM logo" width="900" height="900" /></div></div>
+      <div class="brand-title"><img src="assets/brand/tilm-full-wordmark-transparent-v2-2026-07-13.png" alt="This Is Local Marketing"></div>
+      <div class="nav-actions"><button class="toggle" id="modeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"><span class="mode-icon" aria-hidden="true">☼</span></button></div>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Clear paths for <em>local attention.</em></h1>
+        <p class="lead">TILM builds simple local-business systems that connect print, offer pages, local trust, and follow-up action into one clear path.</p>
+      </div>
+      <aside class="system-card compact hero-stamp" aria-label="TILM page promise">
+        <div class="promise-block">
+          <p class="promise-lead">A local offer should give people a clear next step — not send them searching.</p>
+        </div>
+        <div class="path-block">
+          <div class="path-list">
+            <div><b>Offer</b><span>what the business wants people to notice</span></div>
+            <div><b>Place</b><span>where the offer lives after a scan or click</span></div>
+            <div><b>Proof</b><span>the details that make the business feel real</span></div>
+            <div><b>Action</b><span>call, book, visit, order, review, or request a quote</span></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="basics">
+      <div class="section-head"><div><span class="badge">TILM basics</span><h2>A simple path from attention to action.</h2></div></div>
+      <div class="grid-3">
+        <div class="card"><b>Local visibility</b><span>Put the business in front of nearby people in a way that feels clear, local, and worth noticing — not just another ad competing for space.</span></div>
+        <div class="card"><b>Action path</b><span>Send interest to a simple next step: call, book, order, visit, request a quote, leave a review, or read the offer details without hunting around.</span></div>
+        <div class="card"><b>Trust path</b><span>Make the business easier to trust by tightening the basic details customers look for before they decide to reach out.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="sutton-details">
+      <div class="section-head"><div><span class="badge">Current pilot</span><h2>This Is Sutton founding card.</h2></div></div>
+      <div class="pilot-intro">
+        <p>The first Sutton run is planned as a premium full-color <strong>9x12 mailed card</strong> built to be seen, kept, and scanned, with <strong>5,000 mailed cards</strong> promoting <strong>17 local small businesses</strong>: 1 Anchor, 3 Featured, and 13 Standard spots. The card gives each advertiser shared local visibility, while the This Is Sutton Signal Page — a simple scan/click page for the offer — gives interested customers a clear place to learn and act.</p>
+      </div>
+      <div class="grid-3" style="margin-top:18px">
+        <article class="card feature"><b>Mailing plan</b><span>Sutton residents are prioritized first. If any cards remain, the route expands to nearby higher-income homes. The <strong>9x12</strong> size gives each offer more room to stand out.</span></article>
+        <article class="card"><b>Best fit</b><span>Built for local service, food, wellness, retail, home, and community-facing businesses that want one clear offer in front of nearby residents.</span></article>
+        <article class="card"><b>Print-ready rule</b><span>Print readiness is reached when cleared, proof-approved revenue covers the verified all-in shipped-card cost and final artwork is ready. It is not tied to a fixed sold-slot count.</span></article>
+      </div>
+      <div class="grid-3" style="margin-top:14px">
+        <article class="card"><b>Standard · $444</b><span>Designed card spot with one clear offer and an action path within the This Is Sutton Signal Page.</span></article>
+        <article class="card"><b>Featured · $555</b><span>Stronger visual weight than Standard, with the option to include a QR code inside the ad when that helps the offer.</span></article>
+        <article class="card feature"><b>Anchor · $777</b><span>Premium top placement for the first issue, built around one strong local offer and a clear action path using a custom QR code.</span></article>
+      </div>
+      <div class="grid-2" style="margin-top:14px">
+        <article class="card"><b>Proof-first process</b><span>Category fit and offer direction are reviewed first. A proof is drafted for approval, and payment is requested only after the advertiser approves that proof.</span></article>
+        <article class="card"><b>Category fit</b><span>Each main category is limited to one business, so direct competitors are not placed together on the card. Similar-but-different services are reviewed clearly before any proof or payment step.</span></article>
+      </div>
+      <div class="pilot-signal">
+        <div class="pilot-signal-copy">
+          <span class="signal-eyebrow">This Is Sutton Signal Page</span>
+          <h3>See where the card sends people.</h3>
+          <p>The companion Signal Page gives residents one mobile-friendly place to explore local offers, town updates, useful links, and clear next steps after scanning or clicking. The public page currently shows clearly labeled promotional examples and will be updated with approved participating businesses and offers.</p>
+        </div>
+        <a href="sutton/">Explore the This Is Sutton Signal Page</a>
+      </div>
+      <div class="cta-strip">
+        <div><b>Reserve a founding spot on the Sutton card.</b><span>Share your business and offer direction so TILM can review category fit before the proof step.</span><span class="form-access-note">Google sign-in is currently required because the form accepts file uploads. Prefer not to sign in? Contact TILM by email first.</span></div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHepFKXU30rinx8aT_w94Xa5g8POqrdkYuu0Fn06JJw9cvgw/viewform" target="_blank" rel="noopener">Reserve a founding spot.</a>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head"><div><span class="badge">Additional TILM services</span><h2>Four controlled products for clearer local action.</h2><p>These are approval-first TILM tools, not self-serve checkout items. Each one is scoped around a clear local-business need and reviewed before proof, payment, publishing, printing, or account action.</p></div></div>
+      <div class="grid-2">
+        <a class="card feature service-card" href="services/signal-page/"><b>Signal Page</b><span>A focused mobile action page for one business, offer, service, campaign, or review path. Built for one clear next step after a scan or click: call, book, order, request a quote, get directions, read details, or review.</span><em class="service-cta">View Signal Page →</em></a>
+        <a class="card service-card" href="services/qr-scan-ready/"><b>QR Physical Display / Scan Ready</b><span>A physical scan path for a real customer moment: counter, window, table, waiting area, event, handout, receipt, or take-home card. The job is to choose the scan moment, destination, wording, layout, and test path.</span><em class="service-cta">View QR / Scan Ready →</em></a>
+        <a class="card service-card" href="services/trust-path/"><b>TILM Trust Path</b><span>A practical trust-readiness lane for business info, review path, website/primary link clarity, local presence, and the small hesitation points customers check before they decide to act.</span><em class="service-cta">View Trust Path →</em></a>
+        <a class="card service-card" href="services/social-content/"><b>Social Content Kit / Campaign</b><span>Owner-ready post ideas, caption starters, photo prompts, and short campaign copy around a real offer, card spot, Signal Page, QR path, event, service, or local announcement.</span><em class="service-cta">View Social Content →</em></a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head"><div><span class="badge">Contact</span><h2>Reserve a founding spot or ask a question.</h2><p>Use the form to share interest in a Sutton card spot, or contact TILM directly with questions about fit, categories, or services.</p></div></div>
+      <div class="contact-panel">
+        <div class="contact-primary">
+          <div>
+            <span class="contact-eyebrow">Sutton card</span>
+            <h3>Reserve a founding spot.</h3>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdHepFKXU30rinx8aT_w94Xa5g8POqrdkYuu0Fn06JJw9cvgw/viewform" target="_blank" rel="noopener">Reserve a founding spot.</a>
+          </div>
+          <p class="form-access-note">Google sign-in is currently required because the form accepts file uploads. Prefer not to sign in? <a href="mailto:thisislocalmarketing@gmail.com">Contact TILM by email first.</a></p>
+        </div>
+        <div class="contact-block">
+          <div>
+            <b>Questions about the card or other TILM services?</b>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:thisislocalmarketing@gmail.com">thisislocalmarketing@gmail.com</a>
+            <a class="contact-link" href="tel:+15087841117">Text or Call (508) 784-1117</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <div>
+            <span class="contact-eyebrow">SOCIAL MEDIA</span>
+            <h3>Follow TILM</h3>
+          </div>
+          <span class="social-links"><a href="https://www.facebook.com/ThisIsLocalMarketing/" target="_blank" rel="noopener">Facebook</a><a href="https://x.com/T1LMarketing" target="_blank" rel="noopener">X / Twitter</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-claims" aria-label="Project independence and results note">
+      <p><strong>Independent local project.</strong> TILM / This Is Local Marketing and This Is Sutton are independent local business projects, not town, school, or municipal programs. Advertising results vary. No sales, calls, visits, leads, rankings, revenue, ROI, redemptions, search rankings, or other results are guaranteed.</p>
+    </section>
   </main>
+  <script>
+    const btn=document.getElementById('modeToggle');
+    btn.addEventListener('click',()=>{
+      document.body.classList.toggle('light');
+      const light=document.body.classList.contains('light');
+      btn.innerHTML='<span class="mode-icon" aria-hidden="true">'+(light?'☾':'☼')+'</span>';
+      btn.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');
+      btn.title=light?'Switch to dark mode':'Switch to light mode';
+    });
+  </script>
 </body>
 </html>

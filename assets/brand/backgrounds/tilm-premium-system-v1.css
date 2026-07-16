@@ -1,0 +1,449 @@
+/* TILM Local Signal Atlas — shared premium background and surface system. */
+
+:root {
+  --tilm-canvas: #040605;
+  --tilm-canvas-2: #100713;
+  --tilm-surface-low: rgba(13, 11, 16, .76);
+  --tilm-surface-high: rgba(9, 8, 12, .91);
+  --tilm-card-surface: rgba(29, 25, 33, .76);
+  --tilm-hairline: rgba(215, 230, 221, .17);
+  --tilm-surface-shadow: 0 26px 78px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .035);
+  --tilm-card-shadow: inset 0 1px 0 rgba(255, 255, 255, .035), 0 12px 30px rgba(0, 0, 0, .12);
+  --tilm-focus-x: 78%;
+  --tilm-bg-position: center center;
+  --tilm-bg-position-mobile: 76% center;
+}
+
+body.light {
+  --tilm-canvas: #f4f1ea;
+  --tilm-canvas-2: #e8f0eb;
+  --tilm-surface-low: rgba(255, 253, 248, .82);
+  --tilm-surface-high: rgba(255, 254, 250, .94);
+  --tilm-card-surface: rgba(255, 254, 250, .78);
+  --tilm-hairline: rgba(20, 55, 45, .16);
+  --tilm-surface-shadow: 0 24px 68px rgba(26, 48, 41, .11), inset 0 1px 0 rgba(255, 255, 255, .88);
+  --tilm-card-shadow: inset 0 1px 0 rgba(255, 255, 255, .92), 0 10px 26px rgba(26, 48, 41, .07);
+}
+
+body.tilm-page-main {
+  --accent: var(--mint);
+  --tilm-bg-art: url("tilm-bg-main-signal-gateway-dark-2026-07-15.webp");
+  --tilm-bg-art-light: url("tilm-bg-main-signal-gateway-light-2026-07-15.webp");
+  --tilm-focus-x: 90%;
+  --tilm-bg-position: center top;
+  --tilm-bg-position-mobile: 63% top;
+}
+
+body.tilm-page-signal {
+  --tilm-bg-art: url("tilm-bg-signal-page-dark-2026-07-13.webp");
+  --tilm-bg-art-light: url("tilm-bg-signal-page-light-2026-07-13.webp");
+  --tilm-bg-art-mobile: url("tilm-bg-signal-page-dark-2026-07-13-960.webp");
+  --tilm-bg-art-mobile-light: url("tilm-bg-signal-page-light-2026-07-13-960.webp");
+  --tilm-focus-x: 84%;
+  --tilm-bg-position-mobile: 78% center;
+}
+
+body.tilm-page-qr {
+  --tilm-bg-art: url("tilm-bg-qr-scan-dark-2026-07-13.webp");
+  --tilm-bg-art-light: url("tilm-bg-qr-scan-light-2026-07-13.webp");
+  --tilm-bg-art-mobile: url("tilm-bg-qr-scan-dark-2026-07-13-960.webp");
+  --tilm-bg-art-mobile-light: url("tilm-bg-qr-scan-light-2026-07-13-960.webp");
+  --tilm-focus-x: 86%;
+  --tilm-bg-position-mobile: 82% center;
+}
+
+body.tilm-page-social {
+  --tilm-bg-art: url("tilm-bg-social-content-dark-2026-07-13.webp");
+  --tilm-bg-art-light: url("tilm-bg-social-content-light-2026-07-13.webp");
+  --tilm-bg-art-mobile: url("tilm-bg-social-content-dark-2026-07-13-960.webp");
+  --tilm-bg-art-mobile-light: url("tilm-bg-social-content-light-2026-07-13-960.webp");
+  --tilm-focus-x: 78%;
+  --tilm-bg-position-mobile: 77% center;
+}
+
+body.tilm-page-trust {
+  --tilm-bg-art: url("tilm-bg-trust-path-dark-2026-07-13.webp");
+  --tilm-bg-art-light: url("tilm-bg-trust-path-light-2026-07-13.webp");
+  --tilm-bg-art-mobile: url("tilm-bg-trust-path-dark-2026-07-13-960.webp");
+  --tilm-bg-art-mobile-light: url("tilm-bg-trust-path-light-2026-07-13-960.webp");
+  --tilm-focus-x: 80%;
+  --tilm-bg-position-mobile: 76% center;
+}
+
+body.tilm-page-signal.light {
+  --accent: #0f6d5e;
+  --accent2: #0e8172;
+}
+
+body.tilm-page-qr.light {
+  --accent: #087b70;
+  --accent2: #0f6d5e;
+}
+
+body.tilm-page-social.light {
+  --accent: #7a3d82;
+  --accent2: #0f6d5e;
+}
+
+body.tilm-page-trust.light {
+  --accent: #986916;
+  --accent2: #0f6d5e;
+}
+
+body:is(.tilm-page-signal, .tilm-page-qr, .tilm-page-social, .tilm-page-trust) {
+  --accent: #e7a4ff;
+  --accent2: #aafac3;
+}
+
+body.light:is(.tilm-page-signal, .tilm-page-qr, .tilm-page-social, .tilm-page-trust) {
+  --accent: #7a3d82;
+  --accent2: #0f6d5e;
+}
+
+body.light.tilm-page-qr .num {
+  color: #f7fffa;
+}
+
+body.tilm-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 4%, color-mix(in srgb, var(--accent, var(--mint)) 9%, transparent), transparent 30%),
+    linear-gradient(145deg, var(--tilm-canvas), var(--tilm-canvas-2) 68%, var(--tilm-canvas)) !important;
+}
+
+body.tilm-page.light {
+  background:
+    radial-gradient(circle at 16% 4%, color-mix(in srgb, var(--accent, var(--mint)) 8%, transparent), transparent 31%),
+    linear-gradient(145deg, var(--tilm-canvas), var(--tilm-canvas-2) 68%, var(--tilm-canvas)) !important;
+}
+
+body.tilm-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(3, 6, 5, .05), rgba(4, 2, 6, .26)),
+    var(--tilm-bg-art);
+  background-size: cover;
+  background-position: var(--tilm-bg-position);
+  background-repeat: no-repeat;
+  opacity: .9;
+}
+
+body.tilm-page.light::before {
+  background-image:
+    linear-gradient(180deg, rgba(255, 254, 249, .04), rgba(241, 246, 242, .2)),
+    var(--tilm-bg-art-light);
+  opacity: .96;
+}
+
+body.tilm-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 12%, transparent 0 31%, rgba(3, 4, 4, .08) 62%, rgba(3, 2, 4, .22) 100%),
+    linear-gradient(180deg, transparent 0 66%, color-mix(in srgb, var(--tilm-canvas) 70%, transparent) 100%);
+}
+
+body.tilm-page.light::after {
+  background:
+    radial-gradient(circle at 50% 12%, transparent 0 34%, rgba(247, 244, 237, .05) 64%, rgba(237, 241, 236, .2) 100%),
+    linear-gradient(180deg, transparent 0 68%, color-mix(in srgb, var(--tilm-canvas) 52%, transparent) 100%);
+}
+
+body.tilm-page-main::before {
+  opacity: 1;
+}
+
+body.tilm-page-main::after {
+  background:
+    radial-gradient(circle at 90% 24%, transparent 0 26%, rgba(3, 4, 4, .025) 58%, rgba(3, 2, 4, .11) 100%),
+    linear-gradient(180deg, transparent 0 68%, color-mix(in srgb, var(--tilm-canvas) 54%, transparent) 100%);
+}
+
+body.tilm-page-main.light::after {
+  background:
+    radial-gradient(circle at 90% 24%, transparent 0 28%, rgba(247, 244, 237, .025) 62%, rgba(237, 241, 236, .12) 100%),
+    linear-gradient(180deg, transparent 0 70%, color-mix(in srgb, var(--tilm-canvas) 38%, transparent) 100%);
+}
+
+body.tilm-page > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.tilm-page .nav {
+  isolation: isolate;
+}
+
+.tilm-page .nav::before {
+  content: "";
+  display: none !important;
+  position: absolute;
+  inset: -8px -12px;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--tilm-hairline) 76%, transparent);
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(9, 10, 11, .6), rgba(26, 16, 29, .48));
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .035);
+  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  backdrop-filter: blur(18px) saturate(118%);
+}
+
+.tilm-page.light .nav::before {
+  background: linear-gradient(135deg, rgba(255, 254, 250, .78), rgba(240, 245, 241, .7));
+  box-shadow: 0 16px 42px rgba(28, 54, 45, .08), inset 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+.tilm-page .hero {
+  position: relative;
+  isolation: isolate;
+  border-color: color-mix(in srgb, var(--accent, var(--mint)) 22%, var(--tilm-hairline)) !important;
+  background:
+    linear-gradient(120deg, var(--tilm-surface-high), var(--tilm-surface-low) 60%, color-mix(in srgb, var(--accent, var(--mint)) 6%, var(--tilm-surface-low))) !important;
+  box-shadow: var(--tilm-surface-shadow) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(112%);
+  backdrop-filter: blur(15px) saturate(112%);
+}
+
+.tilm-page .hero::after {
+  display: none !important;
+}
+
+.tilm-page .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--tilm-focus-x) 16%, color-mix(in srgb, var(--accent, var(--mint)) 13%, transparent), transparent 34%),
+    linear-gradient(112deg, color-mix(in srgb, var(--mint) 5%, transparent), transparent 43% 72%, color-mix(in srgb, var(--orchid) 11%, transparent));
+}
+
+.tilm-page .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tilm-page .section,
+.tilm-page .foot {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-color: var(--tilm-hairline) !important;
+  background: linear-gradient(145deg, var(--tilm-surface-high), var(--tilm-surface-low)) !important;
+  box-shadow: var(--tilm-surface-shadow) !important;
+}
+
+.tilm-page .section::before,
+.tilm-page .foot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 92% 0, color-mix(in srgb, var(--accent, var(--mint)) 7%, transparent), transparent 27%),
+    linear-gradient(105deg, color-mix(in srgb, var(--mint) 3%, transparent), transparent 40%);
+}
+
+.tilm-page .section::after,
+.tilm-page .foot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  z-index: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent, var(--mint)) 52%, transparent), transparent);
+  opacity: .72;
+}
+
+.tilm-page .section > *,
+.tilm-page .foot > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tilm-page :is(.card, .price-card, .step, .system-card, .contact-box, .contact-primary, .contact-block) {
+  border-color: color-mix(in srgb, var(--accent, var(--mint)) 13%, var(--tilm-hairline)) !important;
+  background: var(--tilm-card-surface) !important;
+  box-shadow: var(--tilm-card-shadow);
+}
+
+.tilm-page :is(.mode, .back, .toggle, .ghost-btn) {
+  border-color: color-mix(in srgb, var(--accent, var(--mint)) 20%, var(--tilm-hairline)) !important;
+  background: color-mix(in srgb, var(--tilm-surface-high) 90%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 8px 24px rgba(0, 0, 0, .12);
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease;
+}
+
+.tilm-page :is(.mode, .back, .toggle, .ghost-btn):hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent, var(--mint)) 48%, transparent) !important;
+}
+
+.tilm-page.light :is(.mode, .back, .toggle, .mode-icon, .ghost-btn) {
+  color: var(--accent, var(--mint)) !important;
+  text-shadow: none !important;
+}
+
+.tilm-page :is(a, button):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent, var(--mint)) 60%, white);
+  outline-offset: 3px;
+}
+
+.tilm-page .workflow-steps {
+  position: relative;
+  isolation: isolate;
+}
+
+.tilm-page .workflow-steps::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: 5%;
+  right: 5%;
+  z-index: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent, var(--mint)) 54%, transparent) 12% 88%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent, var(--mint)) 17%, transparent);
+}
+
+.tilm-page .workflow-steps .step {
+  position: relative;
+  z-index: 1;
+}
+
+.tilm-page .workflow-steps .num {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--tilm-surface-high) 78%, transparent), 0 0 24px color-mix(in srgb, var(--accent, var(--mint)) 24%, transparent);
+}
+
+.tilm-page-main :is(h1, h2, h3, .badge, .card b, .contact-eyebrow, .signal-eyebrow) {
+  font-family: Sora, Manrope, Inter, system-ui, sans-serif;
+}
+
+.tilm-page-main #sutton-details::before {
+  background:
+    radial-gradient(circle at 92% 8%, color-mix(in srgb, var(--mint) 10%, transparent), transparent 28%),
+    radial-gradient(circle at 8% 88%, color-mix(in srgb, var(--violet) 13%, transparent), transparent 32%);
+}
+
+.tilm-page-signal .phone-device {
+  filter: drop-shadow(0 28px 38px rgba(0, 0, 0, .34)) drop-shadow(0 0 26px color-mix(in srgb, var(--accent) 9%, transparent));
+}
+
+.tilm-page-qr .mockup-card,
+.tilm-page-social .social-deck-visual,
+.tilm-page-trust .trust-lens-visual {
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--tilm-hairline)) !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .04) !important;
+}
+
+.tilm-page.light :is(.mockup-card, .social-deck-visual, .trust-lens-visual) {
+  box-shadow: 0 22px 58px rgba(29, 54, 46, .12), inset 0 1px 0 rgba(255, 255, 255, .88) !important;
+}
+
+@media (max-width: 900px) {
+  .tilm-page .workflow-steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  body.tilm-page::before,
+  body.tilm-page.light::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1040px;
+    background-size: auto 100%;
+    background-position: var(--tilm-bg-position-mobile);
+    opacity: .92;
+  }
+
+  body.tilm-page::before {
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 5, .05), var(--tilm-canvas) 98%),
+      var(--tilm-bg-art-mobile);
+  }
+
+  body.tilm-page.light::before {
+    background-image:
+      linear-gradient(180deg, rgba(255, 254, 249, .04), var(--tilm-canvas) 98%),
+      var(--tilm-bg-art-mobile-light);
+  }
+
+  body.tilm-page::after {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1100px;
+  }
+
+  body.tilm-page-main {
+    --tilm-bg-art: url("tilm-bg-main-signal-gateway-dark-mobile-2026-07-15.webp");
+    --tilm-bg-art-light: url("tilm-bg-main-signal-gateway-light-mobile-2026-07-15.webp");
+  }
+
+  body.tilm-page-main::before,
+  body.tilm-page-main.light::before {
+    height: 880px;
+    background-size: auto 100%;
+    background-position: var(--tilm-bg-position-mobile);
+    opacity: 1;
+  }
+
+  body.tilm-page-main::before {
+    background-image:
+      linear-gradient(180deg, rgba(3, 6, 5, .03), var(--tilm-canvas) 99%),
+      var(--tilm-bg-art);
+  }
+
+  body.tilm-page-main.light::before {
+    background-image:
+      linear-gradient(180deg, rgba(255, 254, 249, .025), var(--tilm-canvas) 99%),
+      var(--tilm-bg-art-light);
+  }
+
+  body.tilm-page-main::after {
+    height: 920px;
+  }
+
+  .tilm-page .nav::before {
+    inset: -6px -7px;
+    border-radius: 22px;
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    backdrop-filter: blur(12px) saturate(110%);
+  }
+
+  .tilm-page .hero {
+    -webkit-backdrop-filter: blur(10px) saturate(108%);
+    backdrop-filter: blur(10px) saturate(108%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilm-page *,
+  .tilm-page *::before,
+  .tilm-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* Public release: keep the centered wordmark clear of both controls on the narrowest phones. */
+@media (max-width: 380px) {
+  body.tilm-page-main .brand-title { width: min(56vw, 210px) !important; }
+  body.tilm-page:not(.tilm-page-main) .brand-title { width: min(36vw, 135px) !important; }
+}

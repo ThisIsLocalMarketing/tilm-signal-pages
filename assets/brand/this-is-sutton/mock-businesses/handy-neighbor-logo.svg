@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Handy Neighbor mock logo</title>
+  <desc id="desc">A fictional home repair logo with a house, wrench, and bold HN monogram.</desc>
+  <rect x="12" y="12" width="276" height="276" rx="70" fill="#183d59" stroke="#ef8c35" stroke-width="9"/>
+  <path d="M58 135 L150 57 L242 135 V231 H58 Z" fill="#fff1d6" stroke="#ef8c35" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M94 132 V95 H126 V106" fill="none" stroke="#183d59" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M91 174 H125 V215 H91 Z M175 174 H209 V215 H175 Z" fill="#78909e" stroke="#183d59" stroke-width="7"/>
+  <path d="M132 224 V160 H168 V224" fill="#ef8c35" stroke="#183d59" stroke-width="7"/>
+  <path d="M81 151 H219" stroke="#183d59" stroke-width="9" stroke-linecap="round"/>
+  <path d="M206 72 a23 23 0 0 0 27 29 l-45 45 l-17 -17 l45 -45 a23 23 0 0 0 -10 -12 Z" fill="#78909e" stroke="#183d59" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="32" y="235" width="236" height="38" rx="19" fill="#ef8c35"/>
+  <text x="150" y="261" text-anchor="middle" fill="#183d59" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="900" letter-spacing="1.2">HANDY NEIGHBOR</text>
+</svg>

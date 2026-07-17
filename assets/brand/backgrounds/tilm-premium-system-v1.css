@@ -888,3 +888,112 @@ body.tilm-page > .wrap {
     margin-top: 14px !important;
   }
 }
+
+/* Open-canvas mobile layout: feature the signal artwork while preserving useful sub-cards. */
+@media (max-width: 700px) {
+  body.tilm-page-main .hero {
+    overflow: visible !important;
+    padding: 18px 2px 8px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  body.tilm-page-main .hero::before,
+  body.tilm-page-main .hero::after {
+    display: none !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero-copy {
+    padding: 20px 3px 9px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero > :is(.hero-pricing, .price-strip) {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .tilm-page .section:not(.compact-claims) {
+    overflow: visible !important;
+    margin-top: 22px !important;
+    padding: 31px 2px 8px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .tilm-page .section:not(.compact-claims)::before {
+    display: block !important;
+    inset: 0 8px auto !important;
+    width: auto !important;
+    height: 1px !important;
+    border: 0 !important;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--accent, var(--mint)) 48%, transparent) 20%,
+      color-mix(in srgb, var(--mint) 25%, var(--tilm-hairline)) 50%,
+      color-mix(in srgb, var(--accent, var(--mint)) 48%, transparent) 80%,
+      transparent
+    ) !important;
+    opacity: .78;
+    box-shadow: 0 0 16px color-mix(in srgb, var(--accent, var(--mint)) 13%, transparent);
+  }
+
+  .tilm-page .section:not(.compact-claims)::after {
+    display: none !important;
+  }
+
+  .tilm-page :is(.hero-copy, .section:not(.compact-claims)) > :is(h1, h2, .lead, .section-intro, .samples-intro) {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .44);
+  }
+
+  .tilm-page.light :is(.hero-copy, .section:not(.compact-claims)) > :is(h1, h2, .lead, .section-intro, .samples-intro) {
+    text-shadow: 0 2px 16px rgba(255, 255, 255, .76), 0 1px 2px rgba(39, 54, 46, .12);
+  }
+
+  .tilm-page .section:not(.compact-claims) > :is(.badge, .eyebrow) {
+    margin-left: 2px;
+  }
+
+  .tilm-page .section:not(.compact-claims) > h2 {
+    margin-top: 15px !important;
+  }
+
+  .tilm-page .section:not(.compact-claims) > :is(.section-intro, .samples-intro) {
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  .tilm-page .foot,
+  .tilm-page .compact-claims {
+    margin-top: 24px !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero-copy > .eyebrow {
+    display: flex !important;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+}

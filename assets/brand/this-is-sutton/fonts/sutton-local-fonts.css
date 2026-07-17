@@ -1,0 +1,22 @@
+/* Self-hosted This Is Sutton type system. Latin subsets only. */
+@font-face { font-family:"Inter"; font-style:normal; font-weight:500 900; font-display:swap; src:url("inter-latin-500-900.woff2") format("woff2"); }
+@font-face { font-family:"Barlow Condensed"; font-style:normal; font-weight:700; font-display:swap; src:url("barlow-condensed-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Barlow Condensed"; font-style:normal; font-weight:800; font-display:swap; src:url("barlow-condensed-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"Barlow"; font-style:normal; font-weight:600; font-display:swap; src:url("barlow-latin-600.woff2") format("woff2"); }
+@font-face { font-family:"Barlow"; font-style:normal; font-weight:700; font-display:swap; src:url("barlow-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Barlow"; font-style:normal; font-weight:800; font-display:swap; src:url("barlow-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"Bitter"; font-style:normal; font-weight:700; font-display:swap; src:url("bitter-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Bitter"; font-style:normal; font-weight:800; font-display:swap; src:url("bitter-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"DM Serif Display"; font-style:normal; font-weight:400; font-display:swap; src:url("dm-serif-display-latin-400.woff2") format("woff2"); }
+@font-face { font-family:"Nunito Sans"; font-style:normal; font-weight:600; font-display:swap; src:url("nunito-sans-latin-600.woff2") format("woff2"); }
+@font-face { font-family:"Nunito Sans"; font-style:normal; font-weight:700; font-display:swap; src:url("nunito-sans-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Nunito Sans"; font-style:normal; font-weight:800; font-display:swap; src:url("nunito-sans-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"Nunito Sans"; font-style:normal; font-weight:900; font-display:swap; src:url("nunito-sans-latin-900.woff2") format("woff2"); }
+@font-face { font-family:"Playfair Display"; font-style:normal; font-weight:700; font-display:swap; src:url("playfair-display-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Playfair Display"; font-style:normal; font-weight:800; font-display:swap; src:url("playfair-display-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"Source Sans 3"; font-style:normal; font-weight:600; font-display:swap; src:url("source-sans-3-latin-600.woff2") format("woff2"); }
+@font-face { font-family:"Source Sans 3"; font-style:normal; font-weight:700; font-display:swap; src:url("source-sans-3-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Source Sans 3"; font-style:normal; font-weight:800; font-display:swap; src:url("source-sans-3-latin-800.woff2") format("woff2"); }
+@font-face { font-family:"Work Sans"; font-style:normal; font-weight:600; font-display:swap; src:url("work-sans-latin-600.woff2") format("woff2"); }
+@font-face { font-family:"Work Sans"; font-style:normal; font-weight:700; font-display:swap; src:url("work-sans-latin-700.woff2") format("woff2"); }
+@font-face { font-family:"Work Sans"; font-style:normal; font-weight:800; font-display:swap; src:url("work-sans-latin-800.woff2") format("woff2"); }

@@ -1,0 +1,16 @@
+/* Self-hosted TILM type system. Latin subsets only; no third-party font requests. */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: swap;
+  src: url("manrope-latin-500-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url("sora-latin-600-800.woff2") format("woff2");
+}

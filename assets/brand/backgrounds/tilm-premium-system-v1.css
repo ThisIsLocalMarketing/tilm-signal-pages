@@ -441,9 +441,450 @@ body.tilm-page > .wrap {
   }
 }
 
-
 /* Public release: keep the centered wordmark clear of both controls on the narrowest phones. */
 @media (max-width: 380px) {
   body.tilm-page-main .brand-title { width: min(56vw, 210px) !important; }
   body.tilm-page:not(.tilm-page-main) .brand-title { width: min(36vw, 135px) !important; }
+}
+
+/* Mobile-first signal experience: unified controls, full-width wordmark, and continuous theme artwork. */
+@media (max-width: 700px) {
+  body.tilm-page {
+    --tilm-control-size: 48px;
+    --tilm-control-radius: 15px;
+    --tilm-bg-art-mobile: url("tilm-bg-mobile-signal-network-dark-2026-07-16.webp");
+    --tilm-bg-art-mobile-light: url("tilm-bg-mobile-signal-network-light-2026-07-16.webp");
+    --tilm-mobile-hero-high: rgba(15, 13, 20, .82);
+    --tilm-mobile-hero-low: rgba(8, 8, 12, .73);
+    --tilm-mobile-section-high: rgba(18, 15, 23, .70);
+    --tilm-mobile-section-low: rgba(8, 8, 12, .58);
+    --tilm-mobile-card: rgba(24, 21, 29, .66);
+    --tilm-mobile-info: rgba(18, 16, 22, .90);
+  }
+
+  body.tilm-page.light {
+    --tilm-mobile-hero-high: rgba(255, 253, 247, .88);
+    --tilm-mobile-hero-low: rgba(246, 244, 237, .78);
+    --tilm-mobile-section-high: rgba(255, 253, 247, .76);
+    --tilm-mobile-section-low: rgba(244, 244, 237, .62);
+    --tilm-mobile-card: rgba(255, 254, 249, .72);
+    --tilm-mobile-info: rgba(255, 254, 250, .92);
+  }
+
+  body.tilm-page,
+  body.tilm-page.light {
+    background: var(--tilm-canvas) !important;
+  }
+
+  body.tilm-page::before,
+  body.tilm-page.light::before,
+  body.tilm-page.tilm-page-main::before,
+  body.tilm-page.tilm-page-main.light::before {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: .94;
+  }
+
+  body.tilm-page::before,
+  body.tilm-page.tilm-page-main::before {
+    background-image:
+      linear-gradient(180deg, rgba(2, 3, 4, .08), rgba(5, 4, 7, .24)),
+      var(--tilm-bg-art-mobile);
+  }
+
+  body.tilm-page.light::before,
+  body.tilm-page.tilm-page-main.light::before {
+    background-image:
+      linear-gradient(180deg, rgba(255, 253, 247, .06), rgba(239, 236, 228, .18)),
+      var(--tilm-bg-art-mobile-light);
+    opacity: .98;
+  }
+
+  body.tilm-page::after,
+  body.tilm-page.light::after,
+  body.tilm-page.tilm-page-main::after,
+  body.tilm-page.tilm-page-main.light::after {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  body.tilm-page::after,
+  body.tilm-page.tilm-page-main::after {
+    background:
+      radial-gradient(circle at 90% 12%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 28%),
+      radial-gradient(circle at 8% 54%, rgba(231, 164, 255, .08), transparent 31%),
+      linear-gradient(180deg, rgba(3, 4, 5, .06), rgba(3, 2, 5, .18));
+  }
+
+  body.tilm-page.light::after,
+  body.tilm-page.tilm-page-main.light::after {
+    background:
+      radial-gradient(circle at 90% 13%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 29%),
+      radial-gradient(circle at 7% 55%, rgba(122, 61, 130, .055), transparent 32%),
+      linear-gradient(180deg, rgba(255, 255, 252, .02), rgba(235, 237, 229, .10));
+  }
+
+  .tilm-page .wrap {
+    width: min(94vw, 1120px) !important;
+    margin-top: 12px !important;
+    margin-bottom: 34px !important;
+  }
+
+  .tilm-page .nav {
+    display: grid !important;
+    grid-template-columns: var(--tilm-control-size) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand spacer actions"
+      "wordmark wordmark wordmark";
+    align-items: center !important;
+    gap: 8px 10px !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tilm-page .nav .brand {
+    grid-area: brand;
+    display: grid !important;
+    place-items: center;
+    width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    justify-self: start;
+  }
+
+  .tilm-page .logo {
+    width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    padding: 0 !important;
+    border-radius: var(--tilm-control-radius) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .10) !important;
+  }
+
+  .tilm-page .logo img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: inherit !important;
+    object-fit: cover !important;
+  }
+
+  .tilm-page .nav-actions {
+    grid-area: actions;
+    display: flex !important;
+    align-items: center;
+    justify-self: end;
+    gap: 8px !important;
+  }
+
+  .tilm-page :is(.mode, .toggle, .back) {
+    display: grid !important;
+    place-items: center;
+    width: var(--tilm-control-size) !important;
+    min-width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    min-height: var(--tilm-control-size) !important;
+    padding: 0 !important;
+    border-radius: var(--tilm-control-radius) !important;
+    line-height: 1 !important;
+  }
+
+  .tilm-page .back {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: -.025em !important;
+  }
+
+  .tilm-page .mode-icon {
+    display: block;
+    font-size: 30px !important;
+    font-weight: 500;
+    line-height: .82 !important;
+    transform: translateY(-1px);
+  }
+
+  .tilm-page :is(.mode, .toggle, .back):active {
+    transform: scale(.955);
+  }
+
+  .tilm-page .brand-title,
+  body.tilm-page-main .brand-title,
+  body.tilm-page:not(.tilm-page-main) .brand-title {
+    grid-area: wordmark;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    display: grid !important;
+    place-items: center;
+    justify-self: center;
+    width: min(100%, 356px) !important;
+    height: auto !important;
+    margin: 2px auto 0 !important;
+    padding: 0 2px !important;
+  }
+
+  .tilm-page .brand-title img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, .26));
+  }
+
+  .tilm-page.light .brand-title img {
+    filter: brightness(.62) saturate(1.18) drop-shadow(0 4px 12px rgba(28, 66, 54, .13));
+  }
+
+  .tilm-page .hero {
+    margin-top: 13px !important;
+    border-radius: 23px !important;
+    background: linear-gradient(135deg, var(--tilm-mobile-hero-high), var(--tilm-mobile-hero-low)) !important;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, .23), inset 0 1px 0 rgba(255, 255, 255, .045) !important;
+    -webkit-backdrop-filter: blur(13px) saturate(118%);
+    backdrop-filter: blur(13px) saturate(118%);
+  }
+
+  .tilm-page .section,
+  .tilm-page .foot {
+    margin-top: 15px !important;
+    border-radius: 23px !important;
+    background: linear-gradient(145deg, var(--tilm-mobile-section-high), var(--tilm-mobile-section-low)) !important;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .035) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(115%);
+    backdrop-filter: blur(12px) saturate(115%);
+  }
+
+  .tilm-page :is(.card, .price-card, .step, .service-card, .system-card, .contact-box, .contact-primary, .contact-block, .feature, .path-block, .promise-block, .mock-card, .mockup-card, .sample-shell, .concept-note) {
+    background: var(--tilm-mobile-card) !important;
+    -webkit-backdrop-filter: blur(9px) saturate(110%);
+    backdrop-filter: blur(9px) saturate(110%);
+  }
+
+  .tilm-page-main .hero .system-card {
+    background: var(--tilm-mobile-info) !important;
+  }
+
+  .tilm-page.light .hero,
+  .tilm-page.light .section,
+  .tilm-page.light .foot {
+    box-shadow: 0 18px 42px rgba(52, 65, 55, .12), inset 0 1px 0 rgba(255, 255, 255, .84) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .tilm-page .brand-title,
+  body.tilm-page-main .brand-title,
+  body.tilm-page:not(.tilm-page-main) .brand-title {
+    width: min(100%, 342px) !important;
+  }
+}
+
+.mobile-quick-cta {
+  display: none;
+}
+
+/* Optional mobile conversion pass: shorter service surfaces and a contextual quick action. */
+@media (max-width: 700px) {
+  body.tilm-page:not(.tilm-page-main) .hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 15px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero::before {
+    display: none !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero-copy {
+    padding: 22px 20px 23px;
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--tilm-hairline));
+    border-radius: 23px;
+    background: linear-gradient(135deg, var(--tilm-mobile-hero-high), var(--tilm-mobile-hero-low));
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .20), inset 0 1px 0 rgba(255, 255, 255, .045);
+    -webkit-backdrop-filter: blur(13px) saturate(118%);
+    backdrop-filter: blur(13px) saturate(118%);
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero > .visual {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  body.tilm-page:not(.tilm-page-main) .hero > :is(.hero-pricing, .price-strip) {
+    width: 100%;
+    margin: 0 !important;
+    padding: 18px !important;
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--tilm-hairline));
+    border-radius: 23px;
+    background: linear-gradient(145deg, var(--tilm-mobile-section-high), var(--tilm-mobile-section-low)) !important;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .035);
+    -webkit-backdrop-filter: blur(12px) saturate(115%);
+    backdrop-filter: blur(12px) saturate(115%);
+  }
+
+  body.tilm-page.light:not(.tilm-page-main) .hero-copy,
+  body.tilm-page.light:not(.tilm-page-main) .hero > :is(.hero-pricing, .price-strip) {
+    box-shadow: 0 18px 42px rgba(52, 65, 55, .12), inset 0 1px 0 rgba(255, 255, 255, .84);
+  }
+
+  .tilm-page :is(#contact, #signal-contact, #qr-display-contact, #social-content-contact, #trust-path-contact) {
+    scroll-margin-top: 18px;
+  }
+
+  .tilm-page .wrap {
+    padding-bottom: 72px;
+  }
+
+  .mobile-quick-cta {
+    position: fixed;
+    left: 50%;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(330px, calc(100vw - 32px));
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid color-mix(in srgb, var(--accent) 56%, white 20%);
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--accent, var(--mint)), var(--accent2, var(--mint)));
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .32), inset 0 1px 0 rgba(255, 255, 255, .38);
+    color: #07100d;
+    font: 900 13px/1.15 Sora, Manrope, Inter, system-ui, sans-serif;
+    letter-spacing: -.01em;
+    text-align: center;
+    text-decoration: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, calc(100% + 28px));
+    transition: transform .24s ease, opacity .2s ease, visibility .2s step-end;
+  }
+
+  .tilm-page.light .mobile-quick-cta {
+    color: #fff;
+    box-shadow: 0 16px 36px rgba(50, 54, 47, .24), inset 0 1px 0 rgba(255, 255, 255, .28);
+  }
+
+  .mobile-quick-cta.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+    transition: transform .24s ease, opacity .2s ease, visibility 0s;
+  }
+
+  .mobile-quick-cta:active {
+    transform: translate(-50%, 0) scale(.975);
+  }
+}
+
+/* Final mobile brand lockup: balanced edge controls with the wordmark centered on the viewport. */
+@media (max-width: 700px) {
+  body.tilm-page {
+    --tilm-control-size: 37px;
+    --tilm-control-radius: 11px;
+  }
+
+  .tilm-page .nav {
+    grid-template-columns: var(--tilm-control-size) minmax(0, 1fr) var(--tilm-control-size) !important;
+    grid-template-areas: "brand wordmark actions" !important;
+    align-items: center !important;
+    gap: 0 5px !important;
+    min-height: 48px !important;
+  }
+
+  .tilm-page .nav .brand {
+    width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    align-self: center;
+    justify-self: start;
+  }
+
+  .tilm-page .nav-actions {
+    width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    align-self: center;
+    justify-self: end;
+    justify-content: flex-end !important;
+  }
+
+  .tilm-page :is(.mode, .toggle) {
+    width: var(--tilm-control-size) !important;
+    min-width: var(--tilm-control-size) !important;
+    height: var(--tilm-control-size) !important;
+    min-height: var(--tilm-control-size) !important;
+    border-radius: var(--tilm-control-radius) !important;
+  }
+
+  .tilm-page .mode-icon {
+    position: relative;
+    display: block !important;
+    width: 23px;
+    height: 23px;
+    margin: auto;
+    overflow: visible;
+    color: currentColor;
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  .tilm-page .mode-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='3.75'/%3E%3Cpath d='M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.58 4.58l1.56 1.56M17.86 17.86l1.56 1.56M19.42 4.58l-1.56 1.56M6.14 17.86l-1.56 1.56'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='3.75'/%3E%3Cpath d='M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.58 4.58l1.56 1.56M17.86 17.86l1.56 1.56M19.42 4.58l-1.56 1.56M6.14 17.86l-1.56 1.56'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+    transform: translateY(0);
+  }
+
+  body.tilm-page.light .mode-icon::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.35 15.15A8.45 8.45 0 0 1 8.85 3.65 8.45 8.45 0 1 0 20.35 15.15Z' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.35 15.15A8.45 8.45 0 0 1 8.85 3.65 8.45 8.45 0 1 0 20.35 15.15Z' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    transform: translate(.5px, -.5px) rotate(-2deg);
+  }
+
+  body.tilm-page-main .nav > .brand-title,
+  body.tilm-page:not(.tilm-page-main) .nav > .brand-title {
+    grid-area: wordmark !important;
+    position: static !important;
+    display: grid !important;
+    place-items: center;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: center;
+    justify-self: stretch;
+    transform: none !important;
+  }
+
+  body.tilm-page-main .nav > .brand-title img,
+  body.tilm-page:not(.tilm-page-main) .nav > .brand-title img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 50px !important;
+    object-fit: contain;
+  }
+
+  .tilm-page .hero {
+    margin-top: 14px !important;
+  }
 }

@@ -12,10 +12,7 @@
   <meta property="og:title" content="This Is Sutton — Local Offers & Community Links" />
   <meta property="og:description" content="Explore clearly labeled promotional advertiser examples, Sutton community links, and the This Is Sutton founding card opportunity." />
   <meta property="og:url" content="https://thisislocalmarketing.github.io/tilm-signal-pages/sutton/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@600;700;800&family=Bitter:wght@700;800&family=DM+Serif+Display&family=Nunito+Sans:wght@600;700;800;900&family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@600;700;800&family=Work+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="../assets/brand/this-is-sutton/fonts/sutton-local-fonts.css" rel="stylesheet">
   <style>
     :root{
       --green:#00713D;--deep:#006D37;--leaf:#338E66;--sage:#A1C8B4;--tan:#C9B18B;--paper:#F7F4EA;--ink:#1F2F27;--cream:#FFFDF6;
@@ -136,13 +133,14 @@
     .sample-notice{border:1px solid rgba(216,179,90,.42);border-radius:20px;padding:14px 16px;background:rgba(216,179,90,.08);color:var(--text);font-size:12px;font-weight:750;line-height:1.55;text-align:center}.sample-notice strong{color:var(--title)}
     .founding-cta{display:grid;justify-items:center;gap:10px;border:1px solid rgba(161,200,180,.32);border-radius:28px;padding:24px;background:var(--surface);backdrop-filter:blur(16px);box-shadow:0 12px 32px rgba(0,0,0,.14);text-align:center}.founding-cta h2{font-family:Georgia,serif;color:var(--title);font-size:clamp(28px,4vw,42px);line-height:1;margin:0}.founding-cta p{max-width:68ch;color:var(--muted);font-size:13px;font-weight:650}.founding-cta .reserve-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-size:12px;font-weight:950;box-shadow:0 12px 28px rgba(0,113,61,.24)}.form-access-note{max-width:72ch!important;color:var(--muted)!important;font-size:11px!important;line-height:1.5!important}.form-access-note a{color:var(--title);font-weight:900}
   </style>
+  <link href="../assets/brand/this-is-sutton/sutton-controls.css" rel="stylesheet">
 </head>
 <body data-theme="dark">
   <main class="page">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-top">
         <a class="tilm-logo" href="../" aria-label="Open the TILM Signal Page" title="TILM Signal Page"><img src="../assets/brand/tilm-logo-mint-square-web-2026-07-05.png" alt="TILM" width="900" height="900" /></a>
-        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"><span class="mode-icon" aria-hidden="true">☼</span></button>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"><span class="mode-icon" aria-hidden="true"></span></button>
       </div>
       <div class="hero-inner" aria-label="This Is Sutton">
         <img class="brand-logo" src="../assets/brand/this-is-sutton/this-is-sutton-logo-white-transparent.png" alt="This Is Sutton" width="2443" height="690" />
@@ -220,7 +218,7 @@
     if (savedTheme === 'light' || savedTheme === 'dark') body.dataset.theme = savedTheme;
     function syncThemeButton(){
       const dark = body.dataset.theme === 'dark';
-      toggle.innerHTML = '<span class="mode-icon" aria-hidden="true">' + (dark ? '☼' : '☾') + '</span>';
+      toggle.innerHTML = '<span class="mode-icon" aria-hidden="true"></span>';
       toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
       toggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
     }

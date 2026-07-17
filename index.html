@@ -11,9 +11,7 @@
   <meta property="og:title" content="TILM — This Is Local Marketing" />
   <meta property="og:description" content="TILM creates Signal Pages, scan-ready QR displays, social content support, trust-readiness services, and the This Is Sutton founding card for local businesses." />
   <meta property="og:url" content="https://thisislocalmarketing.github.io/tilm-signal-pages/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;650;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="assets/brand/fonts/tilm-local-fonts.css" rel="stylesheet">
   <style>
     :root{
       --bg:#060307;
@@ -89,10 +87,10 @@
     @media(max-width:560px){.wrap{width:min(94vw,1120px);margin-top:16px}.hero,.section{border-radius:24px;padding:21px}.nav{min-height:64px;gap:10px}.toggle{margin-top:0}.logo{width:58px;height:58px}.brand-title{width:min(64vw,270px);max-width:none}h1{font-size:39px}.lead{font-size:17px}}
   </style>
   <link rel="preload" as="image" href="assets/brand/backgrounds/tilm-bg-main-signal-gateway-dark-2026-07-15.webp" type="image/webp" media="(min-width: 701px)">
-<link rel="preload" as="image" href="assets/brand/backgrounds/tilm-bg-main-signal-gateway-dark-mobile-2026-07-15.webp" type="image/webp" media="(max-width: 700px)">
+<link rel="preload" as="image" href="assets/brand/backgrounds/tilm-bg-mobile-signal-network-dark-2026-07-16.webp" type="image/webp" media="(max-width: 700px)">
   <link rel="stylesheet" href="assets/brand/backgrounds/tilm-premium-system-v1.css">
 </head>
-<body class="tilm-page tilm-page-main">
+<body class="tilm-page tilm-page-main"><script>(function(){try{if(localStorage.getItem("tilm-theme")==="light")document.body.classList.add("light");}catch(_){}})();</script>
   <main class="wrap">
     <nav class="nav" aria-label="Page controls">
       <div class="brand"><div class="logo" aria-label="Mint TILM logo"><img src="assets/brand/tilm-logo-mint-square-web-2026-07-05.png" alt="Mint TILM logo" width="900" height="900" /></div></div>
@@ -207,7 +205,7 @@
     <section class="section compact-claims" aria-label="Project independence and results note">
       <p><strong>Independent local project.</strong> TILM / This Is Local Marketing and This Is Sutton are independent local business projects, not town, school, or municipal programs. Advertising results vary. No sales, calls, visits, leads, rankings, revenue, ROI, redemptions, search rankings, or other results are guaranteed.</p>
     </section>
-  </main>
+  <a class="mobile-quick-cta" href="#contact" data-mobile-cta aria-hidden="true" tabindex="-1">Reserve a founding spot.</a></main>
   <script>
     const btn=document.getElementById('modeToggle');
     btn.addEventListener('click',()=>{
@@ -218,5 +216,5 @@
       btn.title=light?'Switch to dark mode':'Switch to light mode';
     });
   </script>
-</body>
+<script src="assets/js/tilm-mobile-experience.js"></script></body>
 </html>

@@ -25,4 +25,6 @@ A more polished page for stronger placements:
 
 ## Claim boundary
 
-Use scan/action language only when actually trackable. Do not claim guaranteed sales, revenue, ROI, calls, rankings, or redemptions.
+Use scan/action language only after a TILM-managed tracking route and approved action paths are tested. Safe reporting includes aggregate scan events, campaign or placement attribution, device class, tracked action clicks, action breakdown, and scan-to-action rate.
+
+Tracking does not prove completed calls, bookings, visits, leads, sales, revenue, ROI, rankings, or redemptions. Do not store IP addresses or full referrer URLs, keep reporting private, and publish a measurement notice that matches the data actually collected.

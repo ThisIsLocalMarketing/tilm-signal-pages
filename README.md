@@ -25,3 +25,9 @@ Use this repo only for public-safe pages, templates, approved assets, and non-se
 All pages must avoid guaranteed sales, guaranteed ROI, guaranteed rankings, fake scarcity, manipulative urgency, broad unsupported exclusivity promises, review incentives, and private/sensitive data exposure.
 
 Allowed emphasis: local visibility, clearer offers, useful action paths, scan/call/book/review/find paths, and conservative tracking language.
+
+## Community Card operating standard
+
+Every Community Card is scheduled around a first-Wednesday mailbox target for its issue month. TILM-managed card QR paths use privacy-conscious aggregate tracking so participating businesses can review scan events and approved action clicks without treating those events as completed sales or ROI.
+
+See [docs/community-card-operating-standard.md](docs/community-card-operating-standard.md) for the locked schedule, reporting, privacy, and pre-print rules.

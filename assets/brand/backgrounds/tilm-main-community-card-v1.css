@@ -445,7 +445,7 @@ body.light .process-step .step-num {
 
 .reserve-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
   align-items: center;
   margin-top: 18px;
@@ -453,6 +453,7 @@ body.light .process-step .step-num {
   border: 1px solid color-mix(in srgb, var(--mint) 36%, var(--line));
   border-radius: 20px;
   background: linear-gradient(135deg, color-mix(in srgb, var(--mint) 9%, transparent), color-mix(in srgb, var(--orchid) 30%, transparent));
+  text-align: center;
 }
 
 .reserve-panel h3 {
@@ -471,7 +472,7 @@ body.light .process-step .step-num {
 .reserve-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 9px;
 }
 
@@ -710,12 +711,13 @@ body.light .process-step .step-num {
   }
 
   .reserve-panel .sales-button {
-    width: 100%;
+    width: min(100%, 320px);
   }
 
   .reserve-actions {
     display: grid;
     width: 100%;
+    justify-items: center;
   }
 
   .contact-actions-compact,

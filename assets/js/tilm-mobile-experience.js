@@ -2,11 +2,13 @@
   const body = document.body;
   const themeButton = document.getElementById('modeToggle');
   const themeKey = 'tilm-theme';
+  const sunIcon = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.7"></circle><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.58 4.58l1.56 1.56M17.86 17.86l1.56 1.56M19.42 4.58l-1.56 1.56M6.14 17.86l-1.56 1.56"></path></svg>';
+  const moonIcon = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.35 15.15A8.45 8.45 0 0 1 8.85 3.65 8.45 8.45 0 1 0 20.35 15.15Z"></path></svg>';
 
   const syncThemeButton = () => {
     if (!themeButton) return;
     const light = body.classList.contains('light');
-    themeButton.innerHTML = '<span class="mode-icon" aria-hidden="true"></span>';
+    themeButton.innerHTML = '<span class="mode-icon mode-icon-svg" aria-hidden="true">' + (light ? moonIcon : sunIcon) + '</span>';
     themeButton.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
     themeButton.title = light ? 'Switch to dark mode' : 'Switch to light mode';
   };

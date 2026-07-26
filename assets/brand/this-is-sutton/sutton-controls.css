@@ -8,6 +8,27 @@
   line-height:1!important;
 }
 
+.mode-icon.mode-icon-svg{
+  display:grid!important;
+  place-items:center!important;
+}
+
+.mode-icon.mode-icon-svg::before{
+  display:none!important;
+}
+
+.mode-icon.mode-icon-svg svg{
+  display:block;
+  width:23px;
+  height:23px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.55;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  overflow:visible;
+}
+
 .mode-icon{
   position:relative;
   display:block!important;

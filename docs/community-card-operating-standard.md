@@ -6,6 +6,7 @@ Every TILM Community Card is assigned an issue month and scheduled to ship and r
 
 - Build the printer, proof, payment, route, and postal schedule backward from the first-Wednesday mailbox target.
 - Treat the first Wednesday as a planning target, not a guaranteed postal delivery date.
+- Keep the public placement mix flexible. The internal working model of 11 Standard and 6 Featured placements, with an optional Anchor, is a revenue-planning assumption—not fixed card capacity, promised public inventory, or a print-readiness trigger.
 - If print readiness cannot be reached inside the verified printer and postal window, move the card to the next issue month rather than rushing an unapproved or underfunded issue.
 - Print readiness is reached only when cleared, proof-approved revenue covers the verified all-in shipped-card cost, final artwork is ready, and printer and postal specifications are approved. It is not tied to a fixed sold-slot count.
 

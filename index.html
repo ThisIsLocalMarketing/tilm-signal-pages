@@ -106,15 +106,18 @@
         <p class="lead">The This Is Sutton Community Card is a full-color, two-sided 9×12 mailer built with 18 local-business placements. TILM designs each approved placement around one clear offer, protects one business per primary category, and gives interested residents a useful next step.</p>
         <div class="hero-actions">
           <a class="sales-button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdHepFKXU30rinx8aT_w94Xa5g8POqrdkYuu0Fn06JJw9cvgw/viewform" target="_blank" rel="noopener">Reserve a founding spot</a>
-          <a class="sales-button" href="#card-preview">See the actual card</a>
         </div>
         <p class="micro-proof">No payment at intake. See and approve your proof before any invoice.</p>
       </div>
       <figure class="card-hero-preview">
-        <a href="sutton/advertiser-preview/this-is-sutton-august-2026-dark-front.png">
-          <img src="sutton/advertiser-preview/this-is-sutton-august-2026-dark-front.png" alt="Promotional sales mock showing the front layout of the This Is Sutton 9 by 12 Community Card" width="1275" height="1650">
-        </a>
-        <figcaption>Current founding-issue layout · placeholders become approved advertiser proofs</figcaption>
+        <button class="card-flip" type="button" data-card-flip aria-pressed="false" aria-label="Show the back of the Community Card">
+          <span class="card-flip-stage" aria-hidden="true">
+            <img class="card-face card-face-front" src="assets/mockups/this-is-sutton-community-card-front.png" alt="" width="1275" height="1650">
+            <img class="card-face card-face-back" src="assets/mockups/this-is-sutton-community-card-back.png" alt="" width="1275" height="1650">
+          </span>
+          <span class="card-flip-hint" aria-hidden="true">Tap to flip</span>
+        </button>
+        <figcaption><strong data-card-side>Front</strong> · Tap the card to flip it and see the <span data-card-target>back</span></figcaption>
       </figure>
       <div class="fact-rail" aria-label="Community Card facts">
         <div><strong>9×12</strong><span>Full-color, two-sided card</span></div>
@@ -133,38 +136,6 @@
         <article class="benefit-card"><span class="benefit-mark">02</span><div><b>Share the campaign</b><p>Join one coordinated oversized mail piece instead of having one business carry the design and production of a solo campaign.</p></div></article>
         <article class="benefit-card"><span class="benefit-mark">03</span><div><b>Protect your category</b><p>Only one approved advertiser is accepted in each TILM-defined primary category, so direct competitors do not share the card.</p></div></article>
         <article class="benefit-card"><span class="benefit-mark">04</span><div><b>Give one next step</b><p>Your placement centers on one offer and action. The live Sutton page—and a QR when useful—can carry the details.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section sales-section" id="card-preview">
-      <span class="section-kicker">See what mails</span>
-      <h2>The actual 18-placement card layout.</h2>
-      <p class="section-intro-sales">This is the current promotional sales mock for the founding issue. The labeled placeholder boxes are replaced with approved advertiser artwork after the proof process.</p>
-      <div class="preview-layout">
-        <div class="preview-pair">
-          <a class="card-side-preview" href="sutton/advertiser-preview/this-is-sutton-august-2026-dark-front.png">
-            <img src="sutton/advertiser-preview/this-is-sutton-august-2026-dark-front.png" alt="Front of the current promotional This Is Sutton Community Card layout" width="1275" height="1650">
-            <span>Front · tap to enlarge</span>
-          </a>
-          <a class="card-side-preview" href="sutton/advertiser-preview/this-is-sutton-august-2026-dark-back.png">
-            <img src="sutton/advertiser-preview/this-is-sutton-august-2026-dark-back.png" alt="Back of the current promotional This Is Sutton Community Card layout" width="1275" height="1650">
-            <span>Back · tap to enlarge</span>
-          </a>
-        </div>
-        <div class="preview-explainer">
-          <h3>Built to feel local—not like a random coupon wall.</h3>
-          <p>The card combines approved local-business offers with a Sutton identity and a useful mobile follow-through.</p>
-          <ul>
-            <li>11 Standard, 6 Featured, and 1 Anchor placement</li>
-            <li>Planned Sutton-first household delivery</li>
-            <li>Local offers plus useful Sutton links and updates</li>
-            <li>Approved advertiser proofs replace every placeholder</li>
-          </ul>
-          <div class="preview-actions">
-            <a class="sales-button primary" href="sutton/advertiser-preview/">Open the advertiser preview</a>
-            <a class="sales-button" href="sutton/advertiser-preview/this-is-sutton-august-2026-dark-mock.pdf">Download the card PDF</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -271,6 +242,16 @@
       btn.innerHTML='<span class="mode-icon" aria-hidden="true">'+(light?'☾':'☼')+'</span>';
       btn.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');
       btn.title=light?'Switch to dark mode':'Switch to light mode';
+    });
+    const cardFlip=document.querySelector('[data-card-flip]');
+    const cardSide=document.querySelector('[data-card-side]');
+    const cardTarget=document.querySelector('[data-card-target]');
+    cardFlip?.addEventListener('click',()=>{
+      const flipped=cardFlip.classList.toggle('is-flipped');
+      cardFlip.setAttribute('aria-pressed',String(flipped));
+      cardFlip.setAttribute('aria-label',flipped?'Show the front of the Community Card':'Show the back of the Community Card');
+      if(cardSide)cardSide.textContent=flipped?'Back':'Front';
+      if(cardTarget)cardTarget.textContent=flipped?'front':'back';
     });
   </script>
 <script src="assets/js/tilm-mobile-experience.js"></script></body>

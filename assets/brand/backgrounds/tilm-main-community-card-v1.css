@@ -42,7 +42,6 @@ body.tilm-page-main .sales-hero {
 }
 
 .hero-actions,
-.preview-actions,
 .contact-actions-compact {
   display: flex;
   flex-wrap: wrap;
@@ -100,22 +99,91 @@ body.light .sales-button.primary {
   box-shadow: 0 26px 64px rgba(0, 0, 0, .28);
 }
 
-.card-hero-preview img,
-.card-side-preview img {
+.card-flip {
+  position: relative;
   display: block;
   width: 100%;
-  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
   border-radius: 16px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  perspective: 1600px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.card-hero-preview figcaption,
-.card-side-preview span {
+.card-flip:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 4px;
+}
+
+.card-flip-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1275 / 1650;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.2, .72, .2, 1);
+}
+
+.card-flip.is-flipped .card-flip-stage {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+.card-flip-hint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  padding: 7px 10px;
+  border: 1px solid rgba(170, 250, 195, .44);
+  border-radius: 999px;
+  color: #07100d;
+  background: rgba(170, 250, 195, .92);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+  font: 900 10px Sora, sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.card-hero-preview figcaption {
   display: block;
   padding: 9px 7px 2px;
   color: var(--muted);
   font-size: 11px;
   line-height: 1.4;
   text-align: center;
+}
+
+.card-hero-preview figcaption strong {
+  color: var(--mint);
+  font-weight: 900;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-flip-stage {
+    transition: none;
+  }
 }
 
 .fact-rail {
@@ -220,56 +288,6 @@ body.light .benefit-mark {
   color: var(--muted);
   font-size: 12.5px;
   line-height: 1.45;
-}
-
-.preview-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(290px, .82fr);
-  gap: 18px;
-  align-items: start;
-}
-
-.preview-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.card-side-preview {
-  display: block;
-  min-width: 0;
-  padding: 8px;
-  border: 1px solid color-mix(in srgb, var(--card-gold) 38%, var(--line));
-  border-radius: 19px;
-  background: color-mix(in srgb, var(--text) 5%, transparent);
-  text-decoration: none;
-}
-
-.preview-explainer {
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--text) 5%, transparent);
-}
-
-.preview-explainer h3 {
-  margin: 0;
-  color: var(--text);
-  font-size: clamp(24px, 3vw, 34px);
-}
-
-.preview-explainer p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.preview-explainer ul {
-  margin: 14px 0 0;
-  padding-left: 19px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
 }
 
 .tier-grid {
@@ -512,7 +530,6 @@ body.light .process-step .step-num {
 
 @media (max-width: 900px) {
   body.tilm-page-main .sales-hero,
-  .preview-layout,
   .reserve-panel,
   .compact-contact-panel {
     grid-template-columns: 1fr;
@@ -629,27 +646,6 @@ body.light .process-step .step-num {
 
   .benefit-card {
     padding: 13px;
-  }
-
-  .preview-pair {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .preview-explainer {
-    padding: 17px;
-  }
-
-  .preview-explainer h3,
-  .preview-explainer p {
-    text-align: center;
-  }
-
-  .preview-explainer ul {
-    margin-top: 12px;
-  }
-
-  .preview-actions {
-    display: grid;
   }
 
   .tier-card {

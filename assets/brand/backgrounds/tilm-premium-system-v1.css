@@ -462,11 +462,6 @@ body.tilm-page > .wrap {
   }
 }
 
-/* Use the spacing-corrected shared wordmark on every TILM header. */
-.tilm-page .brand-title img {
-  content: url("../tilm-full-wordmark-spacing-fixed-v4-2026-07-27.png");
-}
-
 @media (prefers-reduced-motion: reduce) {
   .tilm-page *,
   .tilm-page *::before,

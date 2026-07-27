@@ -10,6 +10,13 @@ Every TILM Community Card is assigned an issue month and scheduled to ship and r
 - If print readiness cannot be reached inside the verified printer and postal window, move the card to the next issue month rather than rushing an unapproved or underfunded issue.
 - Print readiness is reached only when cleared, proof-approved revenue covers the verified all-in shipped-card cost, final artwork is ready, and printer and postal specifications are approved. It is not tied to a fixed sold-slot count.
 
+## Anchor package
+
+- The $777 Anchor includes the largest, highest-visibility card placement, placement design, one custom mobile Signal Page, and one matching TILM-managed trackable QR code.
+- The included page and QR follow the same proof-first rule as the physical placement. The advertiser approves the page, destination, QR path, and card artwork before invoicing or launch.
+- Private reporting may include aggregate QR scans and approved action clicks. It must not be presented as proof of completed calls, bookings, visits, sales, revenue, or ROI.
+- Do not charge the Anchor advertiser again for the first included Custom Signal Page or matching QR. Extra pages, destinations, tracked placements, printed displays, or other formats require separate scope and approval.
+
 ## QR measurement
 
 TILM-managed Community Card QR paths use the approved tracking service before opening the resident destination.
